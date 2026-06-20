@@ -1,20 +1,23 @@
-# SIEM Home Lab & Security Alert Monitoring
+# Wireshark Network Traffic Analysis & Protocol Verification
 
-## 🎯 Objective
-Deployed a standalone SIEM environment to ingest system logs, analyze security events, and configure real-time alerts for detecting potential threats like brute force attacks.
+## 🎯 Project Objective
+The main objective of this project is to capture, filter, and analyze live network traffic using Wireshark. This helps in understanding how data packet structures work, verifying network protocols, and identifying baseline anomalies or potential security risks.
 
 ## 🛠️ Tools & Technologies Used
-* **SIEM Platform:** Splunk / Microsoft Sentinel / Wazuh (तुमचे टूल निवडा)
-* **OS Environment:** Windows Server / Linux
-* **Logs Monitored:** Windows Event Logs (Security, System), Syslog
+* **Network Analyzer:** Wireshark
+* **Protocols Analyzed:** TCP, UDP, DNS, HTTP, ICMP
+* **Environment:** Local Network (Wi-Fi/Ethernet)
 
-## 🚀 Key Responsibilities & Actions
-* **SIEM Deployment:** Successfully set up and configured a functional SIEM home lab environment for security monitoring.
-* **Log Ingestion:** Configured log forwarders to collect and parse real-time event logs from endpoints into the SIEM dashboard.
-* **Alert Creation:** Created custom correlation rules and alerts for critical events, such as multiple failed login attempts (Brute Force indicators).
-* **Incident Triage:** Analyzed generated alerts to distinguish between **True Positives** (actual unauthorized access) and **False Positives** (normal user errors).
+## 🚀 Key Learning & Practical Steps Done
+* **Live Packet Capture:** Initiated live traffic capture on the active network interface card (NIC) to record real-time data packets.
+* **Protocol Verification:** Filtered and inspected core network protocols:
+  * **DNS (Domain Name System):** Analyzed standard queries and responses to see how domain names resolve to IP addresses.
+  * **HTTP (Hypertext Transfer Protocol):** Inspected unencrypted web traffic, request methods (GET/POST), and status codes.
+* **TCP 3-Way Handshake Analysis:** Successfully isolated and analyzed the complete connection establishment process:
+  * `SYN` ➔ `SYN-ACK` ➔ `ACK`
+* **Packet Filtering:** Utilized advanced Wireshark display filters (e.g., `ip.addr == X.X.X.X`, `tcp.flags.syn == 1`, `dns`) to quickly isolate specific traffic and troubleshoot logs.
+* **Security Inspection:** Checked packet headers and payloads to understand how to spot unusual patterns, clear-text data leaks, or unauthorized communication attempts.
 
-## 📈 Learning Outcomes
-* Practical experience with SIEM architecture, log parsing, and dashboard management.
-* Understanding how to monitor baseline system behavior and recognize anomalous security events.
-* Knowledge of Windows Event IDs (e.g., Event ID 4625 for failed logon) and how to query them within a SIEM.
+## 📈 Key Outcomes
+* Gained hands-on experience in analyzing the OSI model layers from actual live traffic.
+* Developed the ability to differentiate between normal network behavior and anomalous packet patterns.
